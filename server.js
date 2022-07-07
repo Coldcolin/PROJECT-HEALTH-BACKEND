@@ -16,6 +16,10 @@ app.use(cors({origin: "*"}))
 app.use(cookieParser());
 app.use("/uploads",express.static(path.join(__dirname, "uploads")));
 
+app.get("/", (req, res)=>{
+    res.send("Welcome to emedi")
+})
+
 app.use("/api/doctor", require('./Routes/docRouter'));
 app.use("/api/pharm", require('./Routes/vendorRouter'));
 
